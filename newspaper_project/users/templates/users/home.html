@@ -21,6 +21,7 @@
 
 	<p><a href="{% url 'logout' %}">Log Out</a></p>
 
+
 {% else %}
 
 	<br><div class="alert alert-success" role="alert">
@@ -29,8 +30,28 @@
 		<p>This is the simple blog and articles website.You can join the website by click in sign up button and write your news articles in your account.</p>
 		<hr>
 		<p class="mb-0">Created By-> Suraj Karki.</p>
+
+
 	</div>
 
+				{% for article in object_list %}
+	<div class="card">
+		<div class="card-header">
+			<span class="font-weight-bold">{{ article.title }}</span> &middot;
+			<span class="text-muted">by {{ article.author }} |
+			{{ article.date }}</span>
+		</div>
+		<div class="card-body">
+			<p>{{ article.body }}</p>
+
+
+		</div>
+	</div>
+
+{% endfor %}
+
+
 {% endif %}
+
 
 {% endblock content %}
