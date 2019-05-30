@@ -15,6 +15,10 @@ class ArticleListView(LoginRequiredMixin,ListView):
 
 
 
+
+
+
+
 class ArticleDetailView(LoginRequiredMixin,DetailView): # new
       model = Article
 

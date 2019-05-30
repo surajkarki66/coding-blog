@@ -17,6 +17,9 @@ class Article(models.Model):
      on_delete=models.CASCADE,
     )
 
+
+
+
    def __str__(self):
      return self.title
 
@@ -40,3 +43,9 @@ class Comment(models.Model): # new
      def get_absolute_url(self):
 
        return reverse('article_list')
+
+
+
+
+
+

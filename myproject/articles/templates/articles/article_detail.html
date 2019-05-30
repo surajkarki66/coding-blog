@@ -1,0 +1,25 @@
+<!-- templates/article_detail.html -->
+{% extends 'users/base.html' %}
+{% block content %}
+	<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-10 blog-main">
+            <h3 class="pb-2 mb-3 font-italic border-bottom">
+                {{article.title}}
+            </h3>
+
+            <div class="blog-post">
+
+                <p class="blog-post-meta">{{article.date}}</p>
+
+				<dl>
+					<dt>By {{article.author}}</dt>
+					<dd>{{article.body}}</dd>
+
+				</dl>
+			</div>
+
+	<br><p><a href="{% url 'article_edit' article.pk %}" class="btn btn-info" role="button">Edit</a>
+	<a href="{% url 'article_delete' article.pk %}" class="btn btn-info" role="button">Delete</a></p>
+	<br><p>Back to <a href="{% url 'article_list' %}">All Articles</a>.</p>
+{% endblock content %}
