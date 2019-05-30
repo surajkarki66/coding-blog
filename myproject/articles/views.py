@@ -19,7 +19,7 @@ class ArticleListView(LoginRequiredMixin,ListView):
 
 
 
-class ArticleDetailView(LoginRequiredMixin,DetailView): # new
+class ArticleDetailView(LoginRequiredMixin,DetailView): 
       model = Article
 
       template_name = 'articles/article_detail.html'
@@ -27,11 +27,13 @@ class ArticleDetailView(LoginRequiredMixin,DetailView): # new
       login_url = 'login'
 
 
-class ArticleUpdateView(LoginRequiredMixin,UpdateView): # new
+
+
+class ArticleUpdateView(LoginRequiredMixin,UpdateView): 
 
       model = Article
 
-      fields = ('title', 'body',)
+      fields = ('title', 'body')
 
       template_name = 'articles/article_edit.html'
 
@@ -45,6 +47,7 @@ class ArticleUpdateView(LoginRequiredMixin,UpdateView): # new
               raise PermissionDenied
 
             return super().dispatch(request, *args, **kwargs)
+
 
 
 
@@ -81,7 +84,7 @@ class ArticleCreateView(LoginRequiredMixin,CreateView):
 
       login_url = 'login'
 
-      def form_valid(self, form):  # new
+      def form_valid(self, form):  
 
             form.instance.author = self.request.user
 
