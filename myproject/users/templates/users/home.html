@@ -1,113 +1,110 @@
 <!-- templates/home.html -->
 {% extends 'users/base.html' %}
-
 {% block title %}Home{% endblock title %}
-
+{% load static %}
 {% block content %}
-
-
 {% if user.is_authenticated %}
-
-<body class="text-center" data-gr-c-s-loaded="true">
+  <body class="text-center" data-gr-c-s-loaded="true">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="masthead mb-auto">
-    <div class="inner">
-      <h3 class="masthead-brand">WELCOME CODERS</h3>
-      <nav class="nav nav-masthead justify-content-center">
-
-      </nav>
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">WELCOME CODERS</h3>
+          <nav class="nav nav-masthead justify-content-center">
+          </nav>
+        </div>
+      </header>
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">ITS SURAJ KARKI FROM CODING GUY.</h1>
+        <br><br><p class="lead">Coding Guy is blog app which is made by me where you can post your blog and sees others too.</p>
+        <p class="lead">
+          
+        </p>
+      </main>
+      <br><br><div class="alert alert-primary" role="alert">
+        Want to know About Me
+      </div>
     </div>
-  </header>
-
-  <main role="main" class="inner cover">
-    <h1 class="cover-heading">ITS SURAJ KARKI FROM CODING GUY.</h1>
-    <br><br><p class="lead">Coding Guy is blog app which is made by me where you can post your blog and sees others too.</p>
-    <p class="lead">
-      
-    </p>
-
-  </main>
-
-
-
-
-
-</div>
-
-
-</body>
-
-
-
-<br><br><br><br><br><div class="container">
-  <h1>QUOTE</h1>
-  <blockquote>
-    <p>I want to put a ding in the universe.
-Design is not just what it looks like and feels like. Design is how it works.
-Innovation distinguishes between a leader and a follower.</p>
-    <footer>
-
-		<p class="bg-primary text-white">By Steve Jobs.</p>
-</footer>
-  </blockquote>
-</div>
-
-
-
-
-
+  </body>
+  <div>
+    <a class="nav-link" href="https://www.youtube.com/channel/UCkmKINSlRMk8fD8BWGSwdtw?view_as=subscriber">
+      <img src="{% static 'users/images/youtube.png' %}" width="40" height="40"/>
+    </a>
+    <a class="nav-link" href="https://www.instagram.com/karki3998/">
+      <img src="{% static 'users/images/instagram.png' %}" width="30" height="30"/>
+    </a>
+    <a class="nav-link" href="https://www.facebook.com/michael.karki.37">
+      <img src="{% static 'users/images/facebook.png' %}" width="30" height="30"/>
+    </a>
+    <a class="nav-link" href="https://github.com/surajkarki66">
+      <img src="{% static 'users/images/github.png' %}" width="40" height="40"/>
+    </a>
+  </div>
+  <br><br><br><br><br><div class="container">
+    <h1>QUOTE</h1>
+    <blockquote>
+      <p>I want to put a ding in the universe.
+        Design is not just what it looks like and feels like. Design is how it works.
+      Innovation distinguishes between a leader and a follower.</p>
+      <footer>
+        <p class="bg-primary text-white">By Steve Jobs.</p>
+      </footer>
+    </blockquote>
+  </div>
 {% else %}
-<body class="text-center" data-gr-c-s-loaded="true">
+  <body class="text-center" data-gr-c-s-loaded="true">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="masthead mb-auto">
-    <div class="inner">
-      <h3 class="masthead-brand">WELCOME CODERS</h3>
-      <nav class="nav nav-masthead justify-content-center">
-
-      </nav>
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">WELCOME CODERS</h3>
+          <nav class="nav nav-masthead justify-content-center">
+          </nav>
+        </div>
+      </header>
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">ITS SURAJ KARKI FROM CODING GUY.</h1>
+        <br><br><p class="lead">Coding Guy is blog app which is made by me where you can post your blog and sees others too.</p>
+        <p class="lead">
+          
+        </p>
+      </main>
+      <br><br><div class="alert alert-primary" role="alert">
+        Want to know About Me
+      </div>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/channel/UCkmKINSlRMk8fD8BWGSwdtw?view_as=subscriber">
+            <img src="{% static 'users/images/youtube.png' %}" width="40" height="40"/>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.instagram.com/karki3998/">
+            <img src="{% static 'users/images/instagram.png' %}" width="30" height="30"/>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.facebook.com/michael.karki.37">
+            <img src="{% static 'users/images/facebook.png' %}" width="30" height="30"/>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/surajkarki66">
+            <img src="{% static 'users/images/github.png' %}" width="40" height="40"/>
+          </a>
+        </li>
+      </ul>
     </div>
-  </header>
-
-  <main role="main" class="inner cover">
-    <h1 class="cover-heading">ITS SURAJ KARKI FROM CODING GUY.</h1>
-    <br><br><p class="lead">Coding Guy is blog app which is made by me where you can post your blog and sees others too.</p>
-    <p class="lead">
-      
-    </p>
-
-  </main>
-
-
-
-
-
-</div>
-
-
-</body>
-
-
-
-<br><br><br><br><br><div class="container">
-  <h1>QUOTE</h1>
-  <blockquote>
-    <p> I want to put a ding in the universe.
-Design is not just what it looks like and feels like. Design is how it works.
-Innovation distinguishes between a leader and a follower.
-</p>
-    <footer>
-
-		<p class="bg-primary text-white">By Steve Jobs</p>
-</footer>
-  </blockquote>
-
-</div>
-
-
-
-
-
+  </body>
+  <br><br><br><br><br><div class="container">
+    <h1>QUOTE</h1>
+    <blockquote>
+      <p> I want to put a ding in the universe.
+        Design is not just what it looks like and feels like. Design is how it works.
+        Innovation distinguishes between a leader and a follower.
+      </p>
+      <footer>
+        <p class="bg-primary text-white">By Steve Jobs</p>
+      </footer>
+    </blockquote>
+  </div>
 {% endif %}
-
-
 {% endblock content %}
