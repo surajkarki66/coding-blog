@@ -6,6 +6,7 @@ from .models import Contact
 
 
 
+
 class SignUpView(CreateView):                     # Views for  Sign up page.
 
    form_class = CustomUserCreationForm
@@ -23,6 +24,7 @@ def contact(request):
       desc = request.POST.get('desc', '')
       contact = Contact(name=name, email=email, phone=phone, desc=desc)
       contact.save()  # save it in database
+
    return render(request, 'users/contact.html')
 
 
