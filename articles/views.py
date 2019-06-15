@@ -33,7 +33,7 @@ class ArticleUpdateView(LoginRequiredMixin,UpdateView):
 
       model = Article
 
-      fields = ('title', 'body')
+      fields = ('title', 'body','image')
 
       template_name = 'articles/article_edit.html'
 

@@ -4,6 +4,13 @@
 {% for article in object_list %}
     <div class="container">
         <div class="row mt-5">
+
+
+ 
+
+
+
+
             <div class="col-md-10 blog-main">
                 <h3 class="pb-2 mb-3 font-italic border-bottom">
                 {{article.title}}
@@ -20,6 +27,7 @@
                 <!-- Changes start here! -->
                 <a href="{% url 'article_edit' article.pk %}" class="btn btn-info" role="button">Edit</a>
                 <a href="{% url 'article_delete' article.pk %}" class="btn btn-info" role="button">Delete</a></p>
+                <a href="{% url 'article_detail' article.pk %}" class="btn btn-info" role="button">View</a>
             </div>
             </div><!-- /.blog-post -->
             </div><!-- /.blog-main -->
