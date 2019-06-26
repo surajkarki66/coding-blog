@@ -1,37 +1,53 @@
 {% extends 'users/base.html' %}
+{% load static %}
 {% block title %}Articles{% endblock title %}
 {% block content %}
-{% for article in object_list %}
-    <div class="container">
-        <div class="row mt-5">
-
-
- 
-
-
-
-
-            <div class="col-md-10 blog-main">
-                <h3 class="pb-2 mb-3 font-italic border-bottom">
-                {{article.title}}
-                </h3>
-            </div>
-        </div>
-        <div class="blog-post">
-            <br><p class="blog-post-meta">{{article.date}}</p>
-            <dl>
-                <dt>By {{article.author}}</dt>
-                <dd>{{article.body}}</dd>
-            </dl>
-            <div class="card-body">
-                <!-- Changes start here! -->
-                <a href="{% url 'article_edit' article.pk %}" class="btn btn-info" role="button">Edit</a>
-                <a href="{% url 'article_delete' article.pk %}" class="btn btn-info" role="button">Delete</a></p>
-                <a href="{% url 'article_detail' article.pk %}" class="btn btn-info" role="button">View</a>
-            </div>
-            </div><!-- /.blog-post -->
-            </div><!-- /.blog-main -->
-        </div>
+<div class="card">
+    <img class="card-img-top" src="{% static 'users/images/home-bg.jpg' %}" alt="Card image cap">
+    <div class="card-body">
+    </main>
+    <br><br><div class="alert alert-primary" role="alert">
+        
     </div>
-{% endfor %}
+    {% for article in object_list %}
+        <!-- Main Content -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="post-preview">
+                        <a href="{% url 'article_detail' article.pk %}">
+                            <h2 class="post-title">
+                            {{ article.title }}
+                            </h2>
+                            <h3 class="post-subtitle">
+                            Problems look mighty small from 150 miles up
+                            </h3>
+                        </a>
+                        <p class="post-meta">Posted By
+                            <a href="#">{{ article.author }}</a>
+                        {{ article.date }}</p>
+                        <div class="card-body">
+                            <!-- Changes start here! -->
+                            <a href="{% url 'article_edit' article.pk %}" class="btn btn-info" role="button">Edit</a>
+                            <a href="{% url 'article_delete' article.pk %}" class="btn btn-info" role="button">Delete</a></p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+        <hr>
+        
+        
+    {% endfor %}
+    <!-- Pager -->
+    <div class="clearfix">
+        <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+    </div>
+</div>
+</div>
+</div>
 {% endblock content %}

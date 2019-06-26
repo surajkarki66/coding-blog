@@ -1,25 +1,60 @@
 <!-- templates/article_detail.html -->
 {% extends 'users/base.html' %}
 {% block content %}
-	<div class="container">
-    <div class="row mt-5">
-        <div class="col-md-10 blog-main">
-            <h3 class="pb-2 mb-3 font-italic border-bottom">
-                {{article.title}}
-            </h3>
 
-            <div class="blog-post">
 
-                <p class="blog-post-meta">{{article.date}}</p>
+ <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>{{ article.title }}</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">Posted by
+              <a href="#">{{ article.author }}</a>
+              on {{ article.date }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-				<dl>
-					<dt>By {{article.author}}</dt>
-					<dd>{{article.body}}</dd>
+  <!-- Post Content -->
+  <br><br><article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>{{ article.body }}</p>
 
-				</dl>
-			</div>
+         
+         <a href="#">
+            <img class="img-fluid" src="img/post-sample-image.jpg" alt="">
+          </a>
+          <span class="caption text-muted"></span>
+          <p>Placeholder text by
+            <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by
+            <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+        </div>
 
-	<br><p><a href="{% url 'article_edit' article.pk %}" class="btn btn-info" role="button">Edit</a>
+
+
+      </div>
+    </div>
+  </article>
+
+  
+<br><p><a href="{% url 'article_edit' article.pk %}" class="btn btn-info" role="button">Edit</a>
 	<a href="{% url 'article_delete' article.pk %}" class="btn btn-info" role="button">Delete</a></p>
 	<br><p>Back to <a href="{% url 'article_list' %}">All Articles</a>.</p>
+
+
+  <hr>
+
+
+
+
+
+
 {% endblock content %}
